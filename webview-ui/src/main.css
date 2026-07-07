@@ -1,0 +1,471 @@
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url("../node_modules/@fontsource/noto-sans-kr/files/noto-sans-kr-korean-300-normal.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../node_modules/@fontsource/noto-sans-kr/files/noto-sans-kr-korean-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("../node_modules/@fontsource/noto-sans-kr/files/noto-sans-kr-korean-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Noto Sans KR";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../node_modules/@fontsource/noto-sans-kr/files/noto-sans-kr-korean-700-normal.woff2") format("woff2");
+}
+
+textarea:focus {
+	outline: 1.5px solid var(--vscode-focusBorder, #007fd4);
+}
+
+vscode-button::part(control):focus {
+	outline: none;
+}
+
+vscode-button::part(control):focus-visible {
+	outline: 2px solid var(--vscode-contrastActiveBorder, var(--vscode-focusBorder, Highlight));
+	outline-offset: 2px;
+}
+
+/*
+Use vscode native scrollbar styles
+https://github.com/gitkraken/vscode-gitlens/blob/b1d71d4844523e8b2ef16f9e007068e91f46fd88/src/webviews/apps/home/home.scss
+*/
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+:root {
+	--lig-font-family:
+		"Noto Sans KR", var(--vscode-font-family), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.25;
+	height: 100%;
+	width: 100%;
+	background: var(--lig-bg);
+	color: var(--vscode-foreground);
+	font-family: var(--lig-font-family);
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+:root {
+	--lig-bg: color-mix(in srgb, var(--vscode-editor-background, #1f1f1f) 88%, #07120f);
+	--lig-panel: color-mix(in srgb, var(--vscode-sideBar-background, #252526) 82%, #0d1714);
+	--lig-panel-raised: color-mix(in srgb, var(--vscode-editorWidget-background, #252526) 76%, #101b17);
+	--lig-panel-soft: color-mix(in srgb, var(--vscode-toolbar-hoverBackground, #2d2d2d) 58%, transparent);
+	--lig-border: color-mix(in srgb, var(--vscode-panel-border, #3f3f46) 62%, transparent);
+	--lig-border-strong: color-mix(in srgb, var(--vscode-focusBorder, #2f81f7) 55%, var(--lig-border));
+	--lig-accent: #54d78b;
+	--lig-accent-2: #67b7ff;
+	--lig-accent-muted: color-mix(in srgb, var(--lig-accent) 16%, transparent);
+	--lig-warning-muted: color-mix(in srgb, var(--vscode-editorWarning-foreground, #cca700) 14%, transparent);
+	--lig-text-muted: color-mix(in srgb, var(--vscode-foreground) 62%, transparent);
+	--lig-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+button,
+input,
+textarea,
+select,
+vscode-button,
+vscode-dropdown,
+vscode-text-field,
+vscode-text-area,
+vscode-checkbox,
+vscode-radio,
+vscode-tag {
+	font-family: var(--lig-font-family);
+}
+
+.lig-app-shell {
+	background:
+		linear-gradient(180deg, color-mix(in srgb, var(--lig-panel) 45%, transparent) 0%, transparent 180px),
+		var(--lig-bg);
+	color: var(--vscode-foreground);
+}
+
+.lig-messages-area {
+	background: var(--lig-bg);
+}
+
+.lig-transcript {
+	padding: 0 12px 6px 12px;
+	scrollbar-color: color-mix(in srgb, var(--vscode-scrollbarSlider-background, #797979) 70%, transparent) transparent;
+	user-select: text;
+}
+
+.lig-message-frame {
+	margin: 4px 0;
+	user-select: text;
+}
+
+.lig-assistant-message {
+	max-width: 980px;
+	padding: 1px 3px;
+	color: color-mix(in srgb, var(--vscode-foreground) 96%, white);
+	user-select: text;
+}
+
+.lig-message-frame pre,
+.lig-message-frame code,
+.lig-message-frame p,
+.lig-message-frame li,
+.lig-message-frame table {
+	user-select: text;
+}
+
+.lig-assistant-message .inline-markdown-block {
+	line-height: 1.38;
+}
+
+.lig-assistant-message .inline-markdown-block p {
+	margin-block-start: 0.35em;
+	margin-block-end: 0.35em;
+}
+
+.lig-assistant-message .inline-markdown-block table {
+	border-radius: 5px;
+	overflow: hidden;
+	background: color-mix(in srgb, var(--lig-panel) 76%, transparent);
+}
+
+.lig-assistant-message .inline-markdown-block th {
+	background: color-mix(in srgb, var(--lig-accent-muted) 70%, var(--lig-panel));
+	color: color-mix(in srgb, var(--vscode-foreground) 96%, white);
+}
+
+.lig-assistant-message .inline-markdown-block tr:nth-child(even) {
+	background: color-mix(in srgb, var(--lig-panel-raised) 52%, transparent);
+}
+
+.lig-assistant-message .inline-markdown-block code:not(pre > code) {
+	border-color: color-mix(in srgb, var(--lig-accent) 24%, var(--lig-border));
+	background: color-mix(in srgb, var(--lig-panel-raised) 78%, transparent);
+	color: color-mix(in srgb, var(--vscode-editor-foreground, #d4d4d4) 92%, #ffd479);
+}
+
+.lig-tool-group,
+.lig-progress-row,
+.lig-reasoning-row {
+	max-width: 980px;
+	border: 1px solid var(--lig-border);
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--lig-panel) 82%, transparent);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+.lig-tool-group {
+	padding: 6px 8px;
+	margin: 5px 0;
+	color: var(--lig-text-muted);
+}
+
+.lig-progress-row,
+.lig-reasoning-row {
+	padding: 5px 8px;
+	margin: 5px 0;
+}
+
+.lig-thinking-row button {
+	border-radius: 4px;
+}
+
+.lig-thinking-row button:hover {
+	background: color-mix(in srgb, var(--lig-panel-soft) 70%, transparent);
+}
+
+.lig-thinking-row [class*="text-description"] {
+	color: var(--lig-text-muted);
+}
+
+.lig-task-header {
+	background: linear-gradient(180deg, color-mix(in srgb, var(--lig-panel-raised) 95%, transparent), var(--lig-panel));
+	border: 1px solid var(--lig-border) !important;
+	border-radius: 6px !important;
+	box-shadow: var(--lig-shadow);
+}
+
+.lig-task-header:hover {
+	border-color: var(--lig-border-strong) !important;
+}
+
+.lig-auto-approve {
+	border: 1px solid var(--lig-border);
+	border-bottom: 0;
+	border-radius: 6px 6px 0 0;
+	background: linear-gradient(180deg, color-mix(in srgb, var(--lig-panel-raised) 92%, transparent), var(--lig-panel));
+	box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.lig-action-buttons {
+	padding: 0 14px 8px 14px;
+}
+
+.lig-action-buttons vscode-button::part(control) {
+	border-radius: 4px;
+}
+
+.lig-input-section {
+	padding: 8px 14px 10px;
+	background: var(--lig-panel);
+	border-top: 1px solid var(--lig-border);
+}
+
+.lig-input-shell {
+	border: 1px solid var(--lig-border);
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--vscode-input-background, #1e1e1e) 84%, #0f1815);
+	transition:
+		border-color 120ms ease,
+		background 120ms ease;
+}
+
+.lig-input-shell:focus-within {
+	border-color: var(--lig-border-strong);
+	background: color-mix(in srgb, var(--vscode-input-background, #1e1e1e) 90%, #0f1815);
+}
+
+.lig-input-toolbar {
+	padding: 0 2px;
+}
+
+.lig-input-send {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 4px;
+	color: var(--lig-accent-2);
+	background: color-mix(in srgb, var(--lig-accent-2) 9%, transparent);
+	transition:
+		color 120ms ease,
+		background 120ms ease,
+		transform 120ms ease;
+}
+
+.lig-input-send:not(.disabled):hover {
+	color: white;
+	background: color-mix(in srgb, var(--lig-accent-2) 24%, transparent);
+	transform: translateY(-1px);
+}
+
+.lig-input-send.disabled {
+	color: var(--vscode-disabledForeground, #777);
+	background: transparent;
+}
+
+body.scrollable,
+.scrollable,
+body.code-block-scrollable,
+.code-block-scrollable {
+	border-color: transparent;
+	transition: border-color 0.7s linear;
+}
+
+body:hover.scrollable,
+body:hover .scrollable,
+body:focus-within.scrollable,
+body:focus-within .scrollable,
+body:hover.code-block-scrollable,
+body:hover .code-block-scrollable,
+body:focus-within.code-block-scrollable,
+body:focus-within .code-block-scrollable {
+	border-color: var(--vscode-scrollbarSlider-background);
+	transition: none;
+}
+
+.scrollable::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	border-color: inherit;
+	border-right-style: inset;
+	border-right-width: calc(100vw + 100vh);
+	border-radius: unset;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+	border-color: var(--vscode-scrollbarSlider-hoverBackground);
+}
+
+.scrollable::-webkit-scrollbar-thumb:active {
+	border-color: var(--vscode-scrollbarSlider-activeBackground);
+}
+
+/*
+Fix VSCode ignoring webkit scrollbar modifiers
+https://github.com/microsoft/vscode/issues/213045
+*/
+@supports selector(::-webkit-scrollbar) {
+	html {
+		scrollbar-color: unset;
+	}
+}
+
+/*
+The above scrollbar styling uses some transparent background color magic to accomplish its animation. However this doesn't play nicely with SyntaxHighlighter, so we need to set a background color for the code blocks' horizontal scrollbar. This actually has the unintended consequence of always showing the scrollbar which I prefer since it makes it more obvious that there is more content to scroll to.
+*/
+
+.code-block-scrollable::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.code-block-scrollable::-webkit-scrollbar-thumb {
+	background-color: var(--vscode-scrollbarSlider-background);
+	border-radius: 5px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+}
+
+.code-block-scrollable::-webkit-scrollbar-thumb:hover {
+	background-color: var(--vscode-scrollbarSlider-hoverBackground);
+}
+
+.code-block-scrollable::-webkit-scrollbar-thumb:active {
+	background-color: var(--vscode-scrollbarSlider-activeBackground);
+}
+
+.code-block-scrollable::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
+/*
+Dropdown label
+https://github.com/microsoft/vscode-webview-ui-toolkit/tree/main/src/dropdown#with-label
+*/
+.dropdown-container {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.dropdown-container label {
+	display: block;
+	color: var(--vscode-foreground);
+	cursor: pointer;
+	font-size: var(--vscode-font-size);
+	line-height: normal;
+	margin-bottom: 2px;
+}
+
+/* Fix scrollbar in dropdown */
+
+vscode-dropdown::part(listbox) {
+	border-color: var(--vscode-scrollbarSlider-background);
+	transition: none;
+	scrollbar-color: var(--vscode-scrollbarSlider-background) transparent;
+}
+
+/* Faded icon buttons in textfields */
+
+.input-icon-button {
+	cursor: pointer;
+	opacity: 0.65;
+}
+.input-icon-button:hover {
+	opacity: 1;
+}
+.input-icon-button.disabled {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+.input-icon-button.disabled:hover {
+	opacity: 0.4;
+}
+
+/* Context mentions */
+
+/* Needs to match the highlightLayerRef in ChatTextArea for proper positioning */
+.mention-context-textarea-highlight,
+.mention-context-highlight,
+.mention-context-highlight-with-shadow,
+.slash-command-match-textarea-highlight {
+	font-family: var(--lig-font-family);
+	font-size: var(--vscode-editor-font-size);
+	line-height: var(--vscode-editor-line-height);
+}
+
+.mention-context-textarea-highlight {
+	background-color: color-mix(in srgb, var(--vscode-badge-foreground) 30%, transparent);
+	border-radius: 3px;
+	box-shadow: 0 0 0 0.5px color-mix(in srgb, var(--vscode-badge-foreground) 30%, transparent);
+	color: transparent;
+	/* padding: 0.5px;
+	margin: -0.5px;
+	position: relative;
+	bottom: -0.5px; */
+}
+
+.mention-context-highlight {
+	background-color: color-mix(in srgb, var(--vscode-badge-foreground) 30%, transparent);
+	border-radius: 3px;
+}
+
+.mention-context-highlight-with-shadow {
+	background-color: color-mix(in srgb, var(--vscode-badge-foreground) 30%, transparent);
+	border-radius: 3px;
+	box-shadow: 0 0 0 0.5px color-mix(in srgb, var(--vscode-badge-foreground) 30%, transparent);
+}
+
+.slash-command-match-textarea-highlight {
+	background-color: color-mix(in srgb, var(--vscode-focusBorder) 30%, transparent);
+	border-radius: 3px;
+	box-shadow: 0 0 0 0.5px color-mix(in srgb, var(--vscode-focusBorder) 30%, transparent);
+	color: transparent;
+}
+
+/* Pulse animation for running command indicator */
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+/* Fix tooltip arrow lag - disable animations on tooltips */
+[data-slot="tooltip-content"],
+[data-slot="tooltip-content"] * {
+	animation: none !important;
+	transition: none !important;
+}
+
+/* Fix popover arrow lag - disable animations on popovers */
+[data-slot="popover-content"],
+[data-slot="popover-content"] * {
+	animation: none !important;
+	transition: none !important;
+}

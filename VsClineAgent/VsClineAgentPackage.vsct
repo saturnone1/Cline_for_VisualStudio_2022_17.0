@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidVsClineAgentPackage">
+    <Groups>
+      <Group guid="guidVsClineAgentCmdSet" id="grpAIAgentMenu" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_VIEW" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidVsClineAgentCmdSet" id="cmdOpenChatWindow" priority="0x0100" type="Button">
+        <Parent guid="guidVsClineAgentCmdSet" id="grpAIAgentMenu" />
+        <Strings>
+          <ButtonText>LIG VS</ButtonText>
+          <CommandName>View.LIGVS</CommandName>
+          <ToolTipText>Open LIG VS chat window</ToolTipText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidVsClineAgentPackage" value="{ADCC53D2-7B09-4F8D-8534-1FF693AED219}" />
+
+    <GuidSymbol name="guidVsClineAgentCmdSet" value="{AB1DE66B-E5D1-45D4-839F-ABCE67585458}">
+      <IDSymbol name="grpAIAgentMenu" value="0x1020" />
+      <IDSymbol name="cmdOpenChatWindow" value="0x0100" />
+      <IDSymbol name="cmdClearChatHistory" value="0x0101" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>
