@@ -11,6 +11,3 @@
 [$RootKey$\ToolWindows\{af8e74f0-397b-4cfa-a5de-37307946ff4e}]
 @="{adcc53d2-7b09-4f8d-8534-1ff693aed219}"
 "Name"="VsClineAgent.ToolWindows.ChatToolWindow"
-"Orientation"="Right"
-"Style"="Tabbed"
-"Window"="{34E76E81-EE4A-11D0-AE2E-00A0C90FFFC3}"
