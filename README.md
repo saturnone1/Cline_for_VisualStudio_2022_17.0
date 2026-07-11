@@ -1,5 +1,10 @@
 # Cline for Visual Studio 2022 17.0
 
+> **Archived development source:** feature development has moved to the
+> [17.12 canonical repository](https://github.com/saturnone1/Cline_for_VisualStudio_2022_17.12/tree/agent/runtime-ui-architecture-baseline),
+> which builds both the 17.0 and 17.12 VSIX variants from one common source
+> tree. Keep this repository only for history and migration comparison.
+
 Visual Studio 2022에서 Cline을 사용할 수 있도록 포팅한 VSIX 프로젝트입니다.
 
 이 저장소의 현재 방향은 Cline 에이전트 런타임을 C#으로 다시 구현하는 것이 아니라, `@cline/sdk`를 Node sidecar에서 실행하고 Visual Studio 확장은 WebView2 UI, 프로세스 수명주기, named-pipe JSON-RPC, Visual Studio 호스트 어댑터를 제공하는 것입니다.
